@@ -1,4 +1,4 @@
-import React from 'react';
+/*import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 export default class App extends React.Component {
@@ -18,4 +18,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-});
+});*/
+import ReactNative from 'react-native';
+import Main from './client';
+export default ReactNative.AppRegistry.registerComponent('App', () => Main);
