@@ -1,9 +1,9 @@
-import React from 'react';
-import { View, Text, Button } from 'react-native';
-import { createAppContainer, createStackNavigator, StackActions, NavigationActions } from 'react-navigation'; // Version can be specified in package.json
-import SocketIOClient from 'socket.io-client';
+import React, { Component } from 'react';
+import { Text, View } from 'react-native';
+window.navigator.userAgent = "react-native";
+var io = require('socket.io-client/socket.io');
 
-class HomeScreen extends React.Component {
+export default class HelloWorldApp extends Component {
   constructor(props) {
     super(props);
   
@@ -12,90 +12,9 @@ class HomeScreen extends React.Component {
   }
   render() {
     return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Home Screen</Text>
-        <Button
-          title="Go to Details"
-          onPress={() => {
-            this.props.navigation.dispatch(StackActions.reset({
-              index: 0,
-              actions: [
-                NavigationActions.navigate({ routeName: 'Details' })
-              ],
-            }))
-          }}
-        />
-         <Button  title="Go to Pages"
-                  onPress={() => {
-                    this.props.navigation.dispatch(StackActions.reset({
-                      index: 0,
-                      actions: [
-                        NavigationActions.navigate({ routeName: 'Page' })
-                      ],
-                    }))
-                  }}
-                />
+      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+        <Text>Hello, world!</Text>
       </View>
     );
   }
-}
-
-class DetailsScreen extends React.Component {
-  render() {
-    return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Details Screen</Text>
-        <Button
-                  title="Go Back"
-                  onPress={() => {
-                    this.props.navigation.dispatch(StackActions.reset({
-                      index: 0,
-                      actions: [
-                        NavigationActions.navigate({ routeName: 'Home' })
-                      ],
-                    }))
-                  }}
-                />
-      </View>
-
-    );
-  }
-}
-
-class PageScreen extends React.Component {
-  render() {
-    return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Page Screen</Text>
-        <Button
-                  title="Go Back"
-                  onPress={() => {
-                    this.props.navigation.dispatch(StackActions.reset({
-                      index: 0,
-                      actions: [
-                        NavigationActions.navigate({ routeName: 'Home' })
-                      ],
-                    }))
-                  }}
-                />
-      </View>
-
-    );
-  }
-}
-
-const AppNavigator = createStackNavigator({
-  Home: {
-    screen: HomeScreen,
-  },
-  Details: {
-    screen: DetailsScreen,
-  },
-  Page: {
-    screen: PageScreen,
-  },
-}, {
-    initialRouteName: 'Home',
-});
-
-export default createAppContainer(AppNavigator);
+} 

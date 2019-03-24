@@ -1,9 +1,9 @@
 {
   "devToolsPort": 19002,
-  "expoServerPort": 19000,
-  "packagerPort": 19001,
-  "packagerPid": 661,
-  "expoServerNgrokUrl": "https://55-csj.requiresol.react-native-expo.exp.direct",
-  "packagerNgrokUrl": "https://packager.55-csj.requiresol.react-native-expo.exp.direct",
-  "ngrokPid": 682
+  "expoServerPort": null,
+  "packagerPort": null,
+  "packagerPid": null,
+  "expoServerNgrokUrl": null,
+  "packagerNgrokUrl": null,
+  "ngrokPid": null
 }
