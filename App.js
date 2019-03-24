@@ -1,8 +1,15 @@
 import React from 'react';
 import { View, Text, Button } from 'react-native';
 import { createAppContainer, createStackNavigator, StackActions, NavigationActions } from 'react-navigation'; // Version can be specified in package.json
+import SocketIOClient from 'socket.io-client';
 
 class HomeScreen extends React.Component {
+  constructor(props) {
+    super(props);
+  
+    // Creating the socket-client instance will automatically connect to the server.
+    this.socket = SocketIOClient('http://localhost:19001');
+  }
   render() {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -18,8 +25,7 @@ class HomeScreen extends React.Component {
             }))
           }}
         />
-         <Button
-                  title="Go to Pages"
+         <Button  title="Go to Pages"
                   onPress={() => {
                     this.props.navigation.dispatch(StackActions.reset({
                       index: 0,
