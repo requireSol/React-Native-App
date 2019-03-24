@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { Text, View } from 'react-native';
 window.navigator.userAgent = "react-native";
-var io = require('socket.io-client/socket.io');
+import io from 'socket.io-client/dist/socket.io';
 
 export default class HelloWorldApp extends Component {
   constructor(props) {
     super(props);
-  
+    console.log("Socket io connected");
     // Creating the socket-client instance will automatically connect to the server.
-    this.socket = SocketIOClient('http://localhost:19001');
+    this.socket = io('localhost:3000', {jsonp: false});
   }
   render() {
     return (
