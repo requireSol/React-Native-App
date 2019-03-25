@@ -1,9 +1,9 @@
 {
   "devToolsPort": 19002,
   "expoServerPort": 19000,
-  "packagerPort": 19001,
-  "packagerPid": 5673,
-  "expoServerNgrokUrl": "https://9e-nx5.anonymous.app.exp.direct",
-  "packagerNgrokUrl": "https://packager.9e-nx5.anonymous.app.exp.direct",
-  "ngrokPid": 5694
+  "packagerPort": null,
+  "packagerPid": null,
+  "expoServerNgrokUrl": "https://bw-vpx.anonymous.app-enam-io.exp.direct",
+  "packagerNgrokUrl": "https://packager.bw-vpx.anonymous.app-enam-io.exp.direct",
+  "ngrokPid": 12732
 }
