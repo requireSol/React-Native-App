@@ -5,7 +5,19 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+      <script src="/socket.io/socket.io.js"></script>
+      <script>
+        const socket = io();
+      </script>
+ <button onclick="myFunction()">Click me</button>
+
+ <p id="demo"></p>
+ 
+ <script>
+ function myFunction() {
+   console.log("GG WP");
+ }
+ </script>
   </body>
+
 </html>

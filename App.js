@@ -3,10 +3,20 @@ import { Platform, StatusBar, StyleSheet, View } from 'react-native';
 import { AppLoading, Asset, Font, Icon } from 'expo';
 import AppNavigator from './navigation/AppNavigator';
 
+window.navigator.userAgent = 'react-native';
+import io from 'socket.io-client/dist/socket.io';
+
 export default class App extends React.Component {
   state = {
     isLoadingComplete: false,
   };
+
+  constructor() {
+		super();
+		this.socket = io('http://localhost:3000/' , {jsonp: false}); // replace 'environment.serverUrl' with your server url
+    this.socket.emit('connected', 'Hi server'); // emits 'hi server' to your server
+    console.log("Connected");
+  }
 
   render() {
     if (!this.state.isLoadingComplete && !this.props.skipLoadingScreen) {
