@@ -29,10 +29,10 @@ export default class App extends Component {
         <View style={styles.container}>
           <StatusBar
               barStyle="light-content"
-              backgroundColor="#4F6D7A"
+              backgroundColor="#2A001A"
           />
           <Text style={styles.welcome}>
-            Welcome to React Native!
+            Welcome to Enam App!
           </Text>
           <Text style={styles.instructions}>
             To get started, edit App.js
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#4F6D7A',
+    backgroundColor: '#2A001A',
   },
   welcome: {
     fontSize: 20,
