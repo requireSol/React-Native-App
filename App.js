@@ -5,8 +5,11 @@ import {
   StyleSheet,
   Text,
   View,
-  StatusBar
+  StatusBar,
+  Button
 } from 'react-native';
+import { createStackNavigator, createAppContainer  , StackActions,
+    NavigationActions} from "react-navigation";
 
 
 import SplashScreen from 'react-native-splash-screen';
@@ -19,31 +22,52 @@ const instructions = Platform.select({
   android: 'Double tap R on your keyboard to reload,\n' +
       'Shake or press menu button for dev menu',
 });
-
-export default class App extends Component {
+class HomeScreen extends Component {
     componentDidMount() {
         SplashScreen.hide()
     }
   render() {
-    return (
-        <View style={styles.container}>
-          <StatusBar
-              barStyle="light-content"
-              backgroundColor="#2A001A"
-          />
-          <Text style={styles.welcome}>
-            Welcome to Enam App!
-          </Text>
-          <Text style={styles.instructions}>
-            To get started, edit App.js
-          </Text>
-          <Text style={styles.instructions}>
-            {instructions}
-          </Text>
-        </View>
-    );
+      return (
+          <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+              <Text>Home Screen</Text>
+              <Button
+                  title="Go to Details"
+                  onPress={() => {
+                      this.props.navigation.dispatch(StackActions.reset({
+                          index: 0,
+                          actions: [
+                              NavigationActions.navigate({ routeName: 'Details' })
+                          ],
+                      }))
+                  }}
+              />
+          </View>
+      );
   }
 }
+
+class DetailsScreen extends React.Component {
+    render() {
+        return (
+            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+                <Text>Details Screen</Text>
+            </View>
+        );
+    }
+}
+
+const AppNavigator = createStackNavigator({
+    Home: {
+        screen: HomeScreen,
+    },
+    Details: {
+        screen: DetailsScreen,
+    },
+}, {
+    initialRouteName: 'Home',
+});
+
+export default createAppContainer(AppNavigator);
 
 const styles = StyleSheet.create({
   container: {
