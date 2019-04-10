@@ -7,6 +7,7 @@ import {
     View,
     Platform
 } from 'react-native';
+//Test Commit
 //import { Button } from 'react-native-elements';
 import AsyncStorage from '@react-native-community/async-storage';
 import {createStackNavigator, createSwitchNavigator, createAppContainer} from 'react-navigation';
