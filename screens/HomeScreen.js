@@ -1,8 +1,7 @@
+import React from 'react';
 import SplashScreen from "react-native-splash-screen";
 import {Button, StyleSheet, View} from "react-native";
-import AsyncStorage from "@react-native-community/async-storage";
-
-class HomeScreen extends React.Component {
+export default class HomeScreen extends React.Component {
     componentDidMount() {
         SplashScreen.hide()
     }
@@ -41,6 +40,7 @@ class HomeScreen extends React.Component {
         this.props.navigation.navigate('Auth');
     };
 }
+
 const styles = StyleSheet.create({
     container: {
         flex: 1,

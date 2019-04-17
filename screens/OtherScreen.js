@@ -1,7 +1,8 @@
-import {Button, StatusBar, StyleSheet, View} from "react-native";
-import AsyncStorage from "@react-native-community/async-storage";
 
-class OtherScreen extends React.Component {
+import React from 'react'
+import {Button, StatusBar, StyleSheet, View} from "react-native";
+
+export default class OtherScreen extends React.Component {
     static navigationOptions = {
         title: 'Lots of features here',
         headerStyle: {
@@ -28,6 +29,7 @@ class OtherScreen extends React.Component {
         this.props.navigation.navigate('Auth');
     };
 }
+
 const styles = StyleSheet.create({
     container: {
         flex: 1,

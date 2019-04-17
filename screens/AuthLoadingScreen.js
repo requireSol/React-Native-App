@@ -1,8 +1,9 @@
+import React from 'react';
 import AsyncStorage from "@react-native-community/async-storage";
-import {ActivityIndicator, Button, StatusBar, View} from "react-native";
+import {ActivityIndicator, Button, StatusBar, StyleSheet, View} from "react-native";
 import {createStackNavigator} from "react-navigation";
 
-class AuthLoadingScreen extends React.Component {
+export default class AuthLoadingScreen extends React.Component {
     constructor() {
         super();
         this._bootstrapAsync();
@@ -28,3 +29,12 @@ class AuthLoadingScreen extends React.Component {
         );
     }
 }
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: '#2A001A'
+    },
+});
