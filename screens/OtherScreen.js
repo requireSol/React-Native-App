@@ -1,7 +1,7 @@
 
 import React from 'react'
 import {Button, StatusBar, StyleSheet, View} from "react-native";
-
+import AsyncStorage from "@react-native-community/async-storage";
 export default class OtherScreen extends React.Component {
     static navigationOptions = {
         title: 'Lots of features here',
