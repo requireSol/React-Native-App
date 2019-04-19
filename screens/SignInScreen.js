@@ -3,7 +3,8 @@ import React from 'react';
 import SplashScreen from "react-native-splash-screen";
 import {Button, StyleSheet, View, TextInput} from "react-native";
 import AsyncStorage from "@react-native-community/async-storage";
-import Input from '@bit/ans.base-ui.input';
+import { Input } from 'react-native-elements';
+import InputCustom from '../components/InputCustom';
 
 
 export default class SignInScreen extends React.Component {
@@ -32,7 +33,8 @@ export default class SignInScreen extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                <Input placeholder="Enter your email" type="email" icon="Mail"/>
+                <InputCustom name='Username'/>
+                <InputCustom name='Password'/>
                 <Button title="Sign in!" onPress={this._signInAsync}/>
             </View>
         );
@@ -51,4 +53,5 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         backgroundColor: '#2A001A'
     },
+
 });
